@@ -1,10 +1,12 @@
 * {
     margin: 0px;
 }
-/*  betűknek találni vmi szexit, a nyilakra tenni animációt kattnál, 
-a leíróboxot eltűntetni kattintással, képre kattintva nagyítson, a kijelölt bordernek normális keretet
+/*  betűknek találni vmi szexit - pipa, de ez soha nem ér véget...
+képre kattintva nagyítson, 
+thumb fölé hover címet - fontos lenne!
 
-border nem működik normálisan, nem formázza a js rendesen*/
+thumbnail border nem működik normálisan, nem formázza a js rendesen - már igen, de kicsit szar
+*/
 
 html, body {
     height: 100%;
@@ -26,7 +28,7 @@ html, body {
     position: absolute;
     left: 10%;
     top: 10%;
-    /*árnyékot változtatni*/
+    /*árnyékot változtatni igény szerint*/
     box-shadow: 5px 5px 10px 10px black;
 }
 
@@ -55,15 +57,14 @@ html, body {
 
 #description-box-toggle {
     width: 98%;
-    height: 1%;
+    height: 20%;
     /*border-style: solid;
     border-width: 5px;*/
     position: absolute;
     bottom: 0px;
-    background: rgba(0, 0, 0, 0.5);
+    background: rgba(0, 0, 0, 0.0);
     color: white;
-    padding: 7px;
-
+    padding: 20px;
 }
 
 #photo-title {
@@ -80,6 +81,8 @@ html, body {
     height: 100%;
 }
 
+
+
 #button-left {
     width: 5%;
     height: 100%;
@@ -93,6 +96,10 @@ html, body {
 
 #button-left:hover {cursor: pointer;}
 
+#button-left:hover > #arrow-left {
+    opacity: 0.5;
+    }
+
 #button-left:active {
     background-color: black;
     /*box-shadow: 5px 5px 5px 5px black;*/
@@ -100,7 +107,7 @@ html, body {
   }
 
 #arrow-left {
-    position: absolute; /* nem jó ez*/
+    position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
@@ -117,7 +124,13 @@ html, body {
     background-image: linear-gradient(white, grey);
 }
 
-#button-right:hover {cursor: pointer;}
+#button-right:hover {
+    cursor: pointer;
+}
+
+#button-right:hover > #arrow-right {
+opacity: 0.5;
+}
 
 #button-right:active {
     background-color: black;
@@ -126,7 +139,7 @@ html, body {
   }
 
 #arrow-right {
-    position: absolute; /* nem jó ez*/
+    position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%) rotate(0.5turn);
@@ -164,15 +177,35 @@ html, body {
     cursor: pointer;
 }
 
+
+/* elvileg itt lenne a hovercard, de ezt majd később - szétbassza a formázást, nincs neki hely, ilyen formában
+a kép feletti sávot szabadon kéne hagyni
+.hovercard {
+    display: none;
+    position: relative;
+    background: grey;
+    color: white;
+    border-radius: 5px;
+    padding: 5px;
+    top: -50px;
+  }
+
+.thumbnail:hover .hovercard {
+    display: block;
+}*/
+
 h1 {
     font-size: 2.5vw;
     margin-right: auto;
+    font-family: 'Raleway', sans-serif;
 
 }
 
 p {
     font-size: 1.25vw;
     margin-right: auto;
+    font-family: 'Raleway', sans-serif;
+    font-weight: 300;
 }
 
 .button:active {
@@ -180,3 +213,6 @@ p {
     box-shadow: 0 5px #666;
     transform: translateY(4px);
   }
+
+
+

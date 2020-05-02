@@ -5,29 +5,38 @@ data = {
     description: 'What happened here, why is this a very nice image'
 };*/
 
-//A képeket és a szövegeket generáló rész
+//A képeket és a szövegeket generáló rész, át kell alakítani később
 
 var photo = ['img/Forest-fire.jpg', 'img/AuroraClouds_Boffelli_2048.jpg', 'img/Will_o_the_wisp_by_fladdermuuus.jpg','img/Tulips.jpg','img/Desert.jpg','img/Hydrangeas.jpg','img/Backyard.jpg','img/Golfcourse.jpg', 'img/Rainy-street.jpg', 'img/Wimbledon-station.jpg', 'img/Londawn.jpg'];
 var title = ['Tűz', 'Auróra', 'Will-o-Wisp', 'Tulipánok', 'Sivatag, kaktuszok nélkül', 'Virág (?)', 'Londoni Hátsókert, cc. 2017', 'Wimbledon Golfcourse', 'Esős londoni utca', 'Wimbledon Station', 'Londawn'];
 var description = ['Ez itt egy lángoló erdő.', 'Ez itt az Aurora Borealis.', 'Ez pedig egy tündérfény.', 'Önmagáért beszél.', 'Sivatag, kaktusz nélkül.', 'Fogalmam sincs, milyen virág ez, itt volt a mappában, és egész jól néz ki.', '"...és ez itten a kert..."', 'Golfpálya, nahát. Szép hely amúgy.', 'Ez pedig a golfpálya mögötti út. A házakat úgy nézd, hogy sem te, sem én nem veszünk itt levegőn kívül soha semmit.', 'Metrómegálló a város szélén.', 'O2 Aréna, egy december reggel. Élőben szebb volt.'];
 
 //A képek betöltéséért felelős rész
-//var valami2 = 0
-//console.log(valami2);
 
 var currentPhoto = 0;
-
 
 var loadPhoto = (currentPhoto) => {
     $('#image').attr('src', photo[currentPhoto]);
     $('#photo-title').text(title[currentPhoto]);
     $('#photo-description').text(description[currentPhoto]);
-    $(".thumbnail-image").css('border-style', 'none', 'border-width', '0px',);
+    $(".thumbnail-image").css('border-style', 'none', 'border-width', '0px'); // ez itt nem jó
     
+   // var x = ["0"];
     var x = document.getElementById([currentPhoto]);
-    console.log(x);
-    $(x).css('border-style', 'ridge', 'border', 'width', '10px', 'border', 'color', 'red');
-    
+    //function retnum(x) { 
+     //   var num = x.replace(/[^0-9]/g, ''); 
+     //   return parseInt(num,10); 
+     //  }
+   // retnum(x); 
+
+    //var z = x.replace(/[^0-9]/g, '');
+    //let y = parseInt(z);
+   // console.log(retnum);
+
+    $(x).css({'border-style': 'ridge', 'border-width': '5px', 'border-color': 'white'});
+    //megoldás, teljesen felülírja ezt itt felette, és csak az vonatkozik rá, talán (??? fogalmam sincs)
+
+  
 };
 
 loadPhoto(currentPhoto);
@@ -79,15 +88,20 @@ $(function () {
         $('#description-box').slideToggle(400);
     });
 });
+
 $(function () {
     $('#description-box').on('click', function () {
         $('#description-box').slideToggle(400);
     });
 });
 
+  // ez lenne itt a kis vacak a thumb felett, a gond, h ebben a formában csak a fő képét írja ki, más ref kell rá
+  //$('.hovercard').text(title[currentPhoto]);
 
 
 
+
+//--------------------- felesleges részek, törölhető ---------------------//
 
 //Rak rá egy dobozt??
     //let valami = $('.thumbnail').attr('photoindex')
